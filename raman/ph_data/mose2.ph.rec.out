@@ -1,0 +1,404 @@
+
+     Program PHONON v.7.0 starts on 15Nov2022 at 21:21:52 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     8 processors
+
+     MPI processes distributed on     1 nodes
+     K-points division:     npool     =       8
+     9130 MiB available memory on the printing compute node when the environment starts
+ 
+     Waiting for input...
+     Reading input from standard input
+
+     Reading xml data from directory:
+
+     /home/theory/phrrpq/qe-7.0/tempdir/mose2.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum        1225     547    163               201103    59583    9817
+ 
+     Using Slab Decomposition
+ 
+     Reading collected, re-writing distributed wavefunctions
+        1 /   1 q-points for this run, from  1 to  1:
+       N       xq(1)         xq(2)         xq(3) 
+       1   0.000000000   0.000000000   0.000000000
+ 
+
+     Calculation of q =    0.0000000   0.0000000   0.0000000
+
+     Restart after Phonon calculation
+
+     phonons of mose2 at Gamma                                                  
+
+     bravais-lattice index     =            4
+     lattice parameter (alat)  =       6.2783  a.u.
+     unit-cell volume          =    1248.1866 (a.u.)^3
+     number of atoms/cell      =            3
+     number of atomic types    =            2
+     kinetic-energy cut-off    =      50.0000  Ry
+     charge density cut-off    =     450.0000  Ry
+     convergence threshold     =      1.0E-12
+     beta                      =       0.7000
+     number of iterations used =            4
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+
+
+     celldm(1)=    6.27831  celldm(2)=    0.00000  celldm(3)=    5.82399
+     celldm(4)=    0.00000  celldm(5)=    0.00000  celldm(6)=    0.00000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (  1.0000  0.0000  0.0000 )  
+               a(2) = ( -0.5000  0.8660  0.0000 )  
+               a(3) = (  0.0000  0.0000  5.8240 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.0000  0.5774  0.0000 )  
+               b(2) = (  0.0000  1.1547  0.0000 )  
+               b(3) = (  0.0000  0.0000  0.1717 )  
+
+
+     Atoms inside the unit cell: 
+
+     Cartesian axes
+
+     site n.  atom      mass           positions (alat units)
+        1     Mo  95.9500   tau(    1) = (    0.00000    0.00000    2.91199  )
+        2     Se  78.9710   tau(    2) = (    0.50000    0.28868    3.41604  )
+        3     Se  78.9710   tau(    3) = (    0.50000    0.28868    2.40794  )
+
+     Computing dynamical matrix for 
+                    q = (   0.0000000   0.0000000   0.0000000 )
+ 
+     13 Sym.Ops. (with q -> -q+G )
+
+
+     G cutoff =  449.3022  ( 201103 G-vectors)     FFT grid: ( 45, 45,250)
+     G cutoff =  199.6899  (  59583 G-vectors)  smooth grid: ( 30, 30,180)
+     number of k points=    19
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.0138889
+        k(    2) = (   0.0000000   0.0962250   0.0000000), wk =   0.0833333
+        k(    3) = (   0.0000000   0.1924501   0.0000000), wk =   0.0833333
+        k(    4) = (   0.0000000   0.2886751   0.0000000), wk =   0.0833333
+        k(    5) = (   0.0000000   0.3849002   0.0000000), wk =   0.0833333
+        k(    6) = (   0.0000000   0.4811252   0.0000000), wk =   0.0833333
+        k(    7) = (   0.0000000  -0.5773503   0.0000000), wk =   0.0416667
+        k(    8) = (   0.0833333   0.1443376   0.0000000), wk =   0.0833333
+        k(    9) = (   0.0833333   0.2405626   0.0000000), wk =   0.1666667
+        k(   10) = (   0.0833333   0.3367877   0.0000000), wk =   0.1666667
+        k(   11) = (   0.0833333   0.4330127   0.0000000), wk =   0.1666667
+        k(   12) = (   0.0833333   0.5292377   0.0000000), wk =   0.1666667
+        k(   13) = (   0.1666667   0.2886751   0.0000000), wk =   0.0833333
+        k(   14) = (   0.1666667   0.3849002   0.0000000), wk =   0.1666667
+        k(   15) = (   0.1666667   0.4811252   0.0000000), wk =   0.1666667
+        k(   16) = (   0.1666667   0.5773503   0.0000000), wk =   0.0833333
+        k(   17) = (   0.2500000   0.4330127   0.0000000), wk =   0.0833333
+        k(   18) = (   0.2500000   0.5292377   0.0000000), wk =   0.1666667
+        k(   19) = (   0.3333333   0.5773503   0.0000000), wk =   0.0277778
+
+     PseudoPot. # 1 for Mo read from file:
+     /home/theory/phrrpq/sg15_oncv_upf_2020-02-06/Mo_ONCV_PBE-1.2.upf
+     MD5 check sum: 2665c9f4159700498d9a5f7573bd8e9f
+     Pseudo is Norm-conserving, Zval = 14.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+
+     PseudoPot. # 2 for Se read from file:
+     /home/theory/phrrpq/sg15_oncv_upf_2020-02-06/Se_ONCV_PBE-1.2.upf
+     MD5 check sum: e78e48a4f5d8ce1f8dc76ec1271f249c
+     Pseudo is Norm-conserving, Zval =  6.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+
+     Mode symmetry, D_3h (-62m) point group:
+
+
+     Electric field:
+     Dielectric constant
+     Born effective charges in two ways 
+     Raman tensor
+     Electro-optic tensor
+
+
+     Atomic displacements:
+     There are    6 irreducible representations
+
+     Representation     1      1 modes -  Done
+
+     Representation     2      2 modes -  Done
+
+     Representation     3      2 modes -  Done
+
+     Representation     4      1 modes -  Done
+
+     Representation     5      1 modes -  Done
+
+     Representation     6      2 modes -  Done
+
+
+     PHONON       :      0.25s CPU      0.71s WALL
+
+
+          Dielectric constant in cartesian axis 
+
+          (       6.276433045       0.000000000       0.000000000 )
+          (       0.000000000       6.276433045       0.000000000 )
+          (       0.000000000       0.000000000       1.410116958 )
+
+          Effective charges (d Force / dE) in cartesian axis without acoustic sum rule applied (asr)
+
+           atom      1   Mo Mean Z*:       -1.30012
+      Ex  (       -1.87357       -0.00000        0.00000 )
+      Ey  (       -0.00000       -1.87357        0.00000 )
+      Ez  (        0.00000        0.00000       -0.15322 )
+           atom      2   Se Mean Z*:        0.65063
+      Ex  (        0.93761        0.00000        0.00000 )
+      Ey  (        0.00000        0.93761        0.00000 )
+      Ez  (        0.00000       -0.00000        0.07667 )
+           atom      3   Se Mean Z*:        0.65063
+      Ex  (        0.93761        0.00000       -0.00000 )
+      Ey  (        0.00000        0.93761        0.00000 )
+      Ez  (       -0.00000        0.00000        0.07667 )
+
+          Effective charges Sum: Mean:        0.00114
+              0.00165       -0.00000       -0.00000
+             -0.00000        0.00165        0.00000
+              0.00000        0.00000        0.00012
+
+          Effective charges (d Force / dE) in cartesian axis with asr applied: 
+           atom      1   Mo Mean Z*:       -1.30050
+      E*x (       -1.87412       -0.00000        0.00000 )
+      E*y (       -0.00000       -1.87412       -0.00000 )
+      E*z (        0.00000       -0.00000       -0.15326 )
+           atom      2   Se Mean Z*:        0.65025
+      E*x (        0.93706        0.00000        0.00000 )
+      E*y (        0.00000        0.93706        0.00000 )
+      E*z (        0.00000       -0.00000        0.07663 )
+           atom      3   Se Mean Z*:        0.65025
+      E*x (        0.93706        0.00000       -0.00000 )
+      E*y (        0.00000        0.93706        0.00000 )
+      E*z (       -0.00000        0.00000        0.07663 )
+
+              Electro-optic tensor is defined as 
+            the derivative of the dielectric tensor 
+              with respect to one electric field 
+                 units are Rydberg a.u. 
+
+            to obtain the static chi^2 multiply by 1/2  
+
+            to convert to pm/Volt multiply per 2.7502  
+
+
+          Electro-optic tensor in cartesian axis: 
+
+          (       0.000000000       8.101937179      -0.000000000 )
+          (       8.101937179       0.000000000      -0.000000000 )
+          (      -0.000000000       0.000000000       0.000000000 )
+
+          (       8.101937179       0.000000000      -0.000000000 )
+          (       0.000000000      -8.101937179       0.000000000 )
+          (      -0.000000000       0.000000000      -0.000000000 )
+
+          (      -0.000000000       0.000000000       0.000000000 )
+          (      -0.000000000       0.000000000      -0.000000000 )
+          (       0.000000000      -0.000000000       0.000000000 )
+
+
+     Raman tensor (A^2)
+
+     atom #    1    pol.  1
+      0.205868969760E-14      0.110806928878E+02     -0.674218570612E-21
+      0.110806928878E+02     -0.617606909279E-14      0.291945204927E-21
+     -0.674218570612E-21      0.291945204927E-21      0.379341522079E-17
+     atom #    1    pol.  2
+      0.110806928878E+02      0.308803454639E-14     -0.311408218588E-20
+      0.308803454639E-14     -0.110806928878E+02     -0.140462202211E-20
+     -0.311408218588E-20     -0.140462202211E-20      0.219012929887E-17
+     atom #    1    pol.  3
+      0.000000000000E+00      0.000000000000E+00     -0.121389287065E-15
+      0.000000000000E+00      0.000000000000E+00     -0.700841375638E-16
+     -0.121389287065E-15     -0.700841375638E-16      0.000000000000E+00
+     atom #    2    pol.  1
+     -0.772008636598E-15     -0.542266324831E+01      0.343339210148E+00
+     -0.542266324831E+01     -0.772008636599E-15     -0.482505397874E-16
+      0.343339210148E+00     -0.482505397874E-16      0.000000000000E+00
+     atom #    2    pol.  2
+     -0.542266324831E+01     -0.772008636599E-15     -0.241252698937E-16
+     -0.772008636599E-15      0.542266324831E+01      0.343339210148E+00
+     -0.241252698937E-16      0.343339210148E+00     -0.191636313651E-17
+     atom #    2    pol.  3
+      0.150213920651E+02      0.000000000000E+00      0.000000000000E+00
+      0.000000000000E+00      0.150213920651E+02      0.350420687819E-16
+      0.000000000000E+00      0.350420687819E-16      0.143976217295E+01
+     atom #    3    pol.  1
+     -0.514672424399E-15     -0.542266324831E+01     -0.343339210148E+00
+     -0.542266324831E+01      0.000000000000E+00      0.482505397874E-16
+     -0.343339210148E+00      0.482505397874E-16      0.000000000000E+00
+     atom #    3    pol.  2
+     -0.542266324831E+01     -0.772008636599E-15      0.000000000000E+00
+     -0.772008636599E-15      0.542266324831E+01     -0.343339210148E+00
+      0.000000000000E+00     -0.343339210148E+00      0.246389546123E-17
+     atom #    3    pol.  3
+     -0.150213920651E+02      0.000000000000E+00      0.000000000000E+00
+      0.000000000000E+00     -0.150213920651E+02      0.350420687819E-16
+      0.000000000000E+00      0.350420687819E-16     -0.143976217295E+01
+ 
+     Number of q in the star =    1
+     List of q in the star:
+          1   0.000000000   0.000000000   0.000000000
+
+          Dielectric constant in cartesian axis 
+
+          (       6.276433045       0.000000000       0.000000000 )
+          (       0.000000000       6.276433045       0.000000000 )
+          (       0.000000000       0.000000000       1.410116958 )
+
+          Effective charges (d Force / dE) in cartesian axis without acoustic sum rule applied (asr)
+
+           atom      1   Mo Mean Z*:       -1.30012
+      Ex  (       -1.87357       -0.00000        0.00000 )
+      Ey  (       -0.00000       -1.87357        0.00000 )
+      Ez  (        0.00000        0.00000       -0.15322 )
+           atom      2   Se Mean Z*:        0.65063
+      Ex  (        0.93761        0.00000        0.00000 )
+      Ey  (        0.00000        0.93761        0.00000 )
+      Ez  (        0.00000       -0.00000        0.07667 )
+           atom      3   Se Mean Z*:        0.65063
+      Ex  (        0.93761        0.00000       -0.00000 )
+      Ey  (        0.00000        0.93761        0.00000 )
+      Ez  (       -0.00000        0.00000        0.07667 )
+
+          Effective charges Sum: Mean:        0.00114
+              0.00165       -0.00000       -0.00000
+             -0.00000        0.00165        0.00000
+              0.00000        0.00000        0.00012
+
+          Effective charges (d Force / dE) in cartesian axis with asr applied: 
+           atom      1   Mo Mean Z*:       -1.30050
+      E*x (       -1.87412       -0.00000        0.00000 )
+      E*y (       -0.00000       -1.87412       -0.00000 )
+      E*z (        0.00000       -0.00000       -0.15326 )
+           atom      2   Se Mean Z*:        0.65025
+      E*x (        0.93706        0.00000        0.00000 )
+      E*y (        0.00000        0.93706        0.00000 )
+      E*z (        0.00000       -0.00000        0.07663 )
+           atom      3   Se Mean Z*:        0.65025
+      E*x (        0.93706        0.00000       -0.00000 )
+      E*y (        0.00000        0.93706        0.00000 )
+      E*z (       -0.00000        0.00000        0.07663 )
+
+          Effective charges (d P / du) in cartesian axis 
+
+           atom      1   Mo 
+      Px  (       -1.87330        0.00000        0.00000 )
+      Py  (        0.00000       -1.87330        0.00000 )
+      Pz  (        0.00000        0.00000       -0.15128 )
+           atom      2   Se 
+      Px  (        0.93023        0.00000       -0.00000 )
+      Py  (        0.00000        0.93023        0.00000 )
+      Pz  (        0.00000       -0.00000        0.07835 )
+           atom      3   Se 
+      Px  (        0.93023        0.00000        0.00000 )
+      Py  (        0.00000        0.93023       -0.00000 )
+      Pz  (       -0.00000       -0.00000        0.07835 )
+
+     Diagonalizing the dynamical matrix
+
+     q = (    0.000000000   0.000000000   0.000000000 ) 
+
+ **************************************************************************
+     freq (    1) =      -1.806996 [THz] =     -60.274889 [cm-1]
+     freq (    2) =      -1.806996 [THz] =     -60.274889 [cm-1]
+     freq (    3) =       0.579491 [THz] =      19.329729 [cm-1]
+     freq (    4) =       4.813636 [THz] =     160.565601 [cm-1]
+     freq (    5) =       4.813636 [THz] =     160.565601 [cm-1]
+     freq (    6) =       6.945943 [THz] =     231.691709 [cm-1]
+     freq (    7) =       8.147069 [THz] =     271.756954 [cm-1]
+     freq (    8) =       8.147069 [THz] =     271.756954 [cm-1]
+     freq (    9) =      10.169117 [THz] =     339.205229 [cm-1]
+ **************************************************************************
+
+     Mode symmetry, D_3h (-62m) point group:
+
+     freq (   1-   2) =        -60.3  [cm-1]   --> E'              I+R
+     freq (   3-   3) =         19.3  [cm-1]   --> A''2            I  
+     freq (   4-   5) =        160.6  [cm-1]   --> E''             R  
+     freq (   6-   6) =        231.7  [cm-1]   --> A'_1            R  
+     freq (   7-   8) =        271.8  [cm-1]   --> E'              I+R
+     freq (   9-   9) =        339.2  [cm-1]   --> A''2            I  
+ 
+     PHONON       :      0.26s CPU      0.82s WALL
+
+     INITIALIZATION: 
+     phq_setup    :      0.04s CPU      0.09s WALL (       1 calls)
+ 
+     init_vloc    :      0.02s CPU      0.02s WALL (       1 calls)
+     init_us_1    :      0.01s CPU      0.01s WALL (       1 calls)
+ 
+     DIELECTRIC CONSTANT AND EFFECTIVE CHARGES:
+ 
+     RAMAN COEFFICIENTS, THIRD-ORDER CHI:
+ 
+     DYNAMICAL MATRIX:
+     phqscf       :      0.00s CPU      0.00s WALL (       1 calls)
+     dynmatrix    :      0.00s CPU      0.06s WALL (       1 calls)
+ 
+     phqscf       :      0.00s CPU      0.00s WALL (       1 calls)
+ 
+ 
+ 
+     phqscf       :      0.00s CPU      0.00s WALL (       1 calls)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+      General routines
+     fft          :      0.03s CPU      0.03s WALL (       4 calls)
+     ffts         :      0.00s CPU      0.00s WALL (       1 calls)
+     davcio       :      0.00s CPU      0.25s WALL (       3 calls)
+ 
+ 
+     PHONON       :      0.26s CPU      0.82s WALL
+
+ 
+   This run was terminated on:  21:21:53  15Nov2022            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
