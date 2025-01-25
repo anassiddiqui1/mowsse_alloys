@@ -51,3 +51,55 @@ def make_alloy(x,y,N):
 
 def passlog():
     pass
+
+def relax_structure(atoms, calc, log_file, fmax=0.001):
+    """Relax the given atomic structure inplace and return its energy."""
+    atoms.calc = calc
+    dyn = BFGS(atoms)
+    dyn.log = log_file
+    dyn.run(fmax=fmax)
+
+def rgb_to_cmyk(r, g, b):
+    # Convert RGB values to range of 0-1
+    r, g, b = r/255.0, g/255.0, b/255.0
+
+    # Find the maximum value of RGB values
+    max_value = max(r, g, b)
+
+    # If max_value is 0, return 0, 0, 0, 1
+    if max_value == 0:
+        return 0, 0, 0, 1
+
+    # Calculate the K value
+    k = 1 - max_value
+
+    # Calculate the C, M, and Y values
+    c = (1 - r - k) / (1 - k)
+    m = (1 - g - k) / (1 - k)
+    y = (1 - b - k) / (1 - k)
+
+    # Return the CMYK values
+    return c, m, y, k
+
+def cmyk_to_rgb(c, m, y, k):
+    # Calculate the RGB values
+    r = 255 * (1 - c) * (1 - k)
+    g = 255 * (1 - m) * (1 - k)
+    b = 255 * (1 - y) * (1 - k)
+
+    # Round the RGB values and return them as integers
+    return int(round(r)), int(round(g)), int(round(b))
+
+
+def get_color(x,y):
+    
+    #datapoints = [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]] #1-x,x,2-2y,2y
+    
+    valuepoints = np.array([[0.8, 0.8, 0.0, 0.2],  #Mo
+                            [0.0, 0.0, 0.8, 0.2],  #W
+                            [0.0, 0.8, 0.0, 0.2],  #S
+                            [0.8, 0.0, 0.0, 0.2]]) #Se     in percentage
+    
+    cmyk_color = (x*valuepoints[0] + (1-x)*valuepoints[1] + y*valuepoints[2] + (1-y)*valuepoints[3])/2
+    
+    return tuple(np.array(cmyk_to_rgb(*cmyk_color))/255)

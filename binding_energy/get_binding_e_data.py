@@ -3,11 +3,14 @@ from ase.optimize import BFGS
 from ase.geometry.analysis import Analysis
 from ase.data import covalent_radii
 import numpy as np
-from utils.utils import mx2, a_xy, t_xy, calc, passlog, make_alloy
+import sys
+from pathlib import Path
+repo_path = Path("../utils")
+sys.path.append(str(repo_path))
+from tools import mx2, a_xy, t_xy, calc, passlog, make_alloy,relax_structure
 
 # Configuration
 FOLDER_NAME = 'binding_energy_data'  # Folder to store numpy arrays
-FOLDER_NAME = 'demo'  # Folder to store numpy arrays
 N = 12  # NxN supercell
 NSAMPLES = 50 # Number of samples
 

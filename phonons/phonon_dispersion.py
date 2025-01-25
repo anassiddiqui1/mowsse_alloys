@@ -13,19 +13,9 @@ from tools import mx2, a_xy, t_xy, calc, passlog,relax_structure
 import warnings
 warnings.filterwarnings('ignore')
 
-def passlog():
-    pass
-
 lat_param = {'a_MoS2': a_xy(0,0),'t_MoS2': t_xy(0,0),'a_WS2' : a_xy(1,0), 't_WS2' : t_xy(1,0),
             'a_MoSe2': a_xy(0,1),'t_MoSe2': t_xy(0,1),'a_WSe2' : a_xy(1,1), 't_WSe2' : t_xy(1,1)}
-
 calc_espr = None #Change to Espresso calc for rerunning the Espresso phonon calculation
-
-MACE_color = 'blue'
-Espr_color = 'gold'
-i=0
-
-
 
 def get_phonon_bandstructure(atoms,N,calc,delta,phonon_name,read=True):
 
@@ -42,13 +32,11 @@ def get_phonon_bandstructure(atoms,N,calc,delta,phonon_name,read=True):
     return bs,dos
 
 def plot_phonon_bandstructure(ax,dosax,bs,dos,emin,emax,color,label):
-    
     cm1 = 8065.54011 #Conversion factor eV to cm-1
     bs._energies *= cm1
     bs.plot(ax=ax, emin=emin, emax=emax, color=color, ylabel=r"$\mathrm{\omega}$ (cm$^{-1}$)",label=label);
     dosax.plot(dos.get_weights(), dos.get_energies()*cm1,color=color)
     return dos
-
 
 fig = plt.figure(figsize=(9.5,7))
 fontsize = 8.5
@@ -63,13 +51,17 @@ dosax_rects = [[0.41,0.52,0.08,0.43],
            [0.9,0.52,0.08,0.43],
            [0.41,0.04,0.08,0.43],
            [0.9,0.04,0.08,0.43]]
+# Set color for MACE and Espresso results
+MACE_color = 'blue'
+Espr_color = 'gold'
 
-N = 6
+N = 6 # NxN supercell
+index=0 #index within axes
 for m in ["Mo","W"]:
     for c in ["S","Se"]:
 
-        ax = fig.add_axes(ax_rects[i]); 
-        dosax = fig.add_axes(dosax_rects[i]);      
+        ax = fig.add_axes(ax_rects[index]); 
+        dosax = fig.add_axes(dosax_rects[index]);      
         emin = -25;
         emax = 550;
 
@@ -117,8 +109,8 @@ for m in ["Mo","W"]:
         ax.legend(frameon=False,loc='upper right')
 
         # Text of (a), (b), (c), (d) for figure
-        ax.text(-0.55,0.3,f'({string.ascii_lowercase[i]})',fontsize=fontsize+7,fontweight='extra bold')
-        i+=1
+        ax.text(-0.55,0.3,f'({string.ascii_lowercase[index]})',fontsize=fontsize+7,fontweight='extra bold')
+        index+=1
 
 #Save the figure
 plt.tight_layout()
